@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AxlChat — Admin</title>
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+  <div id="wrap">
+    <h2>Admin Panel — AxlChat</h2>
+    <div id="ipStatus">Checking IP…</div>
+
+    <div id="adminUI" class="hidden">
+      <div class="block">
+        <h3>Add Developer</h3>
+        <input id="devFixedId" placeholder="Enter user's fixedId OR Firebase UID" />
+        <input id="devName" placeholder="Display name (optional)" />
+        <button id="btnAddDev">Add as Developer</button>
+      </div>
+
+      <div class="block">
+        <h3>Developers List</h3>
+        <div id="devList"></div>
+      </div>
+
+      <div class="block">
+        <h3>Moderation</h3>
+        <input id="modTarget" placeholder="User fixedId or UID" />
+        <select id="modAction">
+          <option value="ban">Ban</option>
+          <option value="unban">Unban</option>
+          <option value="mute_1h">Mute 1 hour</option>
+          <option value="mute_24h">Mute 24 hour</option>
+        </select>
+        <button id="btnModerate">Apply</button>
+      </div>
+    </div>
+
+    <div id="forbidden" class="hidden">
+      <h3>Access Denied</h3>
+      <p>Sorry — you are not allowed to view this page.</p>
+    </div>
+  </div>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
