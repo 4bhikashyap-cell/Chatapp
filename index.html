@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="hi">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AxlChat — Online Chat</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="brand">AxlChat</div>
+
+      <div id="meBox" class="card">
+        <div id="meAvatar" class="avatar">A</div>
+        <div>
+          <div id="meName">Not logged</div>
+          <div id="meEmail" class="muted">Please login</div>
+          <div id="meFixedId" class="muted smalltext"></div>
+        </div>
+        <button id="btnSignOut" class="small hide">Sign out</button>
+      </div>
+
+      <div class="search">
+        <input id="userSearch" placeholder="Search users..." />
+      </div>
+
+      <div id="usersList" class="list"></div>
+
+      <div class="footer">
+        <button id="btnNewChat">+ New Chat</button>
+      </div>
+    </aside>
+
+    <main id="main">
+      <header id="chatHeader" class="hidden">
+        <div class="left">
+          <div id="chatAvatar" class="avatar">G</div>
+          <div>
+            <div id="chatTitle">Global Chat</div>
+            <div id="chatSubtitle" class="muted">connected</div>
+          </div>
+        </div>
+      </header>
+
+      <section id="messagesWrap" class="hidden">
+        <div id="messages" class="messages"></div>
+        <div class="composer">
+          <div id="replyBox" class="replyBox hidden">Replying to: <span id="replyPreview"></span> <button id="cancelReply">x</button></div>
+          <input id="msgInput" placeholder="Type a message..." />
+          <button id="btnSend">Send</button>
+        </div>
+      </section>
+
+      <div id="welcome" class="welcome">
+        <h2>Welcome to AxlChat</h2>
+        <p>Login or Signup to start chatting with friends.</p>
+        <button id="openLogin">Login / Signup</button>
+      </div>
+    </main>
+  </div>
+
+  <!-- Login Modal -->
+  <div id="authModal" class="modal hidden">
+    <div class="modalCard">
+      <h3 id="authTitle">Login to AxlChat</h3>
+      <input id="inpName" placeholder="Your name (for profile)" />
+      <input id="inpEmail" placeholder="Email" />
+      <input id="inpPass" placeholder="Password" type="password" />
+      <div style="display:flex;gap:8px;">
+        <button id="btnSignup">Sign up</button>
+        <button id="btnLogin">Login</button>
+        <button id="btnClaimId" title="Claim a unique fixed id like Telegram">@ClaimID</button>
+      </div>
+      <p class="muted">Demo uses Firebase Auth + Firestore</p>
+      <button id="closeAuth" class="closeBtn">Close</button>
+    </div>
+  </div>
+
+  <script type="module" src="app.js"></script>
+</body>
+</html>
